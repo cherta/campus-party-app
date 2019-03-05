@@ -45,7 +45,11 @@ defmodule CampusTalks.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:httpoison, "~> 1.4"},
       {:floki, "~> 0.20.0"},
-      {:timex, "~> 3.1"}
+      {:timex, "~> 3.1"},
+      {:absinthe, "~> 1.4.0"},
+      {:absinthe_plug, "~> 1.4"},
+      {:absinthe_ecto, ">= 0.0.0"},
+      {:poison, "~> 3.1"}
     ]
   end
 

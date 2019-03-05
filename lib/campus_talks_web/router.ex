@@ -16,11 +16,16 @@ defmodule CampusTalksWeb.Router do
   scope "/", CampusTalksWeb do
     pipe_through :browser
 
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: CampusTalksWeb.Schema,
+      interface: :advanced
+
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", CampusTalksWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", CampusTalksWeb do
+    pipe_through :api
+
+    forward "/", Absinthe.Plug, schema: CampusTalksWeb.Schema
+  end
 end
