@@ -31,9 +31,6 @@ defmodule CampusTalksWeb.Endpoint do
     pass: ["*/*"],
     json_decoder: Phoenix.json_library()
 
-  # plug Absinthe.Plug,
-  #   schema: CampusTalksWeb.Schema
-
   plug Plug.MethodOverride
   plug Plug.Head
 

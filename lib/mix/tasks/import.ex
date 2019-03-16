@@ -22,7 +22,7 @@ defmodule Mix.Tasks.Import do
       |> String.replace("p.m.", "pm")
       |> String.replace("a.m.", "am")
       |> String.replace("noon", "12 pm")
-      |> String.replace("midnight", "12 am")
+      |> String.replace("midnight", "00 am")
 
     try do
       case str_time |> Timex.parse("{Mfull} {D}, {YYYY}, {h12} {am}") do

@@ -13,19 +13,17 @@ defmodule CampusTalksWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", CampusTalksWeb do
-    pipe_through :browser
+  scope "/" do
+    pipe_through [:browser]
+    get "/", CampusTalksWeb.PageController, :index
 
     forward "/graphiql", Absinthe.Plug.GraphiQL,
       schema: CampusTalksWeb.Schema,
       interface: :advanced
-
-    get "/", PageController, :index
   end
 
-  scope "/api", CampusTalksWeb do
+  scope "/api" do
     pipe_through :api
-
     forward "/", Absinthe.Plug, schema: CampusTalksWeb.Schema
   end
 end

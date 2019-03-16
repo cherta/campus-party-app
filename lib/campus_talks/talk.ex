@@ -3,10 +3,10 @@ defmodule CampusTalks.Talk do
   import Ecto.Changeset
 
   schema "talks" do
-    field :end, :naive_datetime
+    field :end, :utc_datetime
     field :image, :string
     field :speaker_name, :string
-    field :start, :naive_datetime
+    field :start, :utc_datetime
     field :title, :string
     field :url, :string
 
