@@ -17,7 +17,7 @@ const styles = {
 };
 
 const Header = ({ classes }) => (
-  <AppBar position="static">
+  <AppBar position="fixed">
     <Toolbar>
       <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
         <HomeIcon />
