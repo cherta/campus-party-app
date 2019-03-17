@@ -23,23 +23,11 @@ const styles = {
   }
 };
 
-const Talk = ({ classes, id, title, image, speakerName, selected, date }) => (
-  <Mutation mutation={TOGGLE_SELECTION} variables={{ id, date }}>
-    {toggleTalkSelection => (
-      <GridListTile key={title} className={classes.gridItem}>
-        <img src={image} alt={title} />
-        <GridListTileBar
-          title={title}
-          subtitle={<span>by: {speakerName}</span>}
-          actionIcon={
-            <IconButton onClick={toggleTalkSelection}>
-              <StarIcon className={selected ? classes.selectedIcon : classes.icon} />
-            </IconButton>
-          }
-        />
-      </GridListTile>
-    )}
-  </Mutation>
+const Talk = ({ classes, id, title, image, speakerName, selected }) => (
+  <GridListTile key={title} className={classes.gridItem}>
+    <img src={image} alt={title} />
+    <GridListTileBar title={title} subtitle={<span>by: {speakerName}</span>} />
+  </GridListTile>
 );
 
 export default withStyles(styles)(Talk);

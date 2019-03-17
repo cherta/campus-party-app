@@ -32,7 +32,7 @@ const TalkGroup = ({ classes, title, date }) => (
             <ListSubheader component="div">{title}</ListSubheader>
           </GridListTile>
           <Loadingcontainer loading={loading}>
-            {data.talks && data.talks.map(talk => <Talk key={talk.id} date={date} {...talk} />)}
+            {data.talks && data.talks.map(talk => <Talk key={talk.id} {...talk} />)}
           </Loadingcontainer>
         </GridList>
       </div>
