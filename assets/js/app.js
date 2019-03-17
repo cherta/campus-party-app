@@ -53,9 +53,9 @@ class App extends Component {
       <div className={classes.root}>
         <ApolloProvider client={client}>
           <Header />
-          <TalkGroup date="2019-03-15" title="Viernes" talks={[]} />
-          <TalkGroup date="2019-03-16" title="Sábado" talks={[]} />
-          <TalkGroup date="2019-03-17" title="Domingo" talks={[]} />
+          <TalkGroup date="2019-03-15" title="Viernes" />
+          <TalkGroup date="2019-03-16" title="Sábado" />
+          <TalkGroup date="2019-03-17" title="Domingo" />
         </ApolloProvider>
       </div>
     );
